@@ -1,5 +1,3 @@
-Here’s a clean, polished **GitHub-ready README.md** version with better formatting, hierarchy, and readability:
-
 ---
 
 # 🦙 LLAMA.CPP CONTROL CENTER – Desktop GUI Suite
