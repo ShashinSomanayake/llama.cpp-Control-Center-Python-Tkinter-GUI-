@@ -1,155 +1,221 @@
-═══════════════════════════════════════════════════════════════════════
-              🦙 LLAMA.CPP CONTROL CENTER – THREE GUIs
-═══════════════════════════════════════════════════════════════════════
+Here’s a clean, polished **GitHub-ready README.md** version with better formatting, hierarchy, and readability:
 
-Three ready‑to‑run Python scripts that give you a complete desktop GUI 
-for llama.cpp on Windows. Each script is tuned for a specific GPU class.
+---
 
-┌─────────────────────────────────────────────────────────────────────┐
-│ SCRIPT                               │ TARGET GPU         │ BACKEND │
-├──────────────────────────────────────┼────────────────────┼─────────┤
-│ llama.cpp Control center - Intel...  │ Intel Iris Xe, UHD │ Vulkan  │
-│ llama.cpp control centre - MX230...  │ MX230, GTX 1050    │ CUDA    │
-│ llama.cpp control centre - RTX4060...│ RTX 4060, 4070+    │ CUDA    │
-└─────────────────────────────────────────────────────────────────────┘
+# 🦙 LLAMA.CPP CONTROL CENTER – Desktop GUI Suite
 
-All scripts include:
-  ✅ llama-server (web UI)
-  ✅ llama-cli (interactive chat)
-  ✅ llama-perplexity (model evaluation)
-  ✅ llama-bench (performance testing)
-  ✅ Multimodal (MMPROJ) support
-  ✅ One‑click installation & GPU verification
+A set of **ready-to-run Python GUIs** for managing and running `llama.cpp` on Windows.
+Each script is optimized for a specific GPU class, giving you a smooth, one-click experience.
 
-═══════════════════════════════════════════════════════════════════════
-📋 BEFORE YOU START – PREREQUISITES (all scripts)
-═══════════════════════════════════════════════════════════════════════
+---
 
-  * Windows 10 / 11 (64‑bit)
-  * Python 3.8+ (includes tkinter on Windows)
-  * PowerShell 5.1+ (default on Windows)
-  * Git and CMake – only if you use the built‑in Install button
+## 📦 Available Scripts
 
-  🔵 For CUDA scripts (MX230 / RTX4060):
-     - CUDA Toolkit 11.8 or 12.x (nvcc must be in PATH)
-     - Visual Studio 2022 Build Tools with “Desktop development with C++”
+| Script               | Target GPU         | Backend |
+| -------------------- | ------------------ | ------- |
+| **Intel Vulkan GUI** | Intel Iris Xe, UHD | Vulkan  |
+| **MX230 CUDA GUI**   | MX230, GTX 1050    | CUDA    |
+| **RTX CUDA GUI**     | RTX 4060 / 4070+   | CUDA    |
 
-  🟢 For Vulkan script (Intel):
-     - Latest Intel GPU driver with Vulkan support
-     - No extra SDK needed – pre‑built binaries include ggml-vulkan.dll
+---
 
-═══════════════════════════════════════════════════════════════════════
-📦 GETTING THE RIGHT LLAMA.CPP BINARIES
-═══════════════════════════════════════════════════════════════════════
+## ✨ Features
 
-🔹 INTEL VULKAN SCRIPT – no compilation needed.
-   The script automatically finds a pre‑extracted Vulkan build folder,
-   for example:
-        %USERPROFILE%\llama-b8931-bin-win-vulkan-x64\
-   If not found, click the “⬇ Download Vulkan Build” button in the GUI.
-   It will fetch the latest *-vulkan-x64.zip and extract it to:
-        %USERPROFILE%\llama.cpp\build-vulkan\
+* ✅ Built-in **llama-server** (Web UI)
+* ✅ **llama-cli** for interactive chat
+* ✅ **llama-perplexity** for evaluation
+* ✅ **llama-bench** for performance testing
+* ✅ 🖼️ **Multimodal (MMPROJ) support**
+* ✅ ⚡ **One-click installation**
+* ✅ 🔍 **GPU verification tools**
+* ✅ 💾 Persistent configuration (auto-saved)
 
-🔹 NVIDIA CUDA SCRIPTS (both low‑end and RTX) – two options:
+---
 
-   ▶ Option A – One‑click build (recommended)
-       1. Install Git, CMake, CUDA Toolkit and VS2022.
-       2. Run the GUI → click “🔧 Install llama.cpp”.
-       3. The PowerShell script will clone llama.cpp into
-          %USERPROFILE%\llama.cpp, create build-cuda, and compile.
-       4. Final executables are placed in:
-          %USERPROFILE%\llama.cpp\build-cuda\bin\Release\
+## ⚙️ Prerequisites
 
-   ▶ Option B – Manual download
-       Download a pre‑built *-cuda-x64.zip from the llama.cpp releases
-       page. Extract it so that llama-cli.exe is inside:
-          %USERPROFILE%\llama.cpp\build-cuda\bin\Release\
+### 🖥️ General (All Scripts)
 
-═══════════════════════════════════════════════════════════════════════
-🗂️ WHERE TO PLACE THE SCRIPTS
-═══════════════════════════════════════════════════════════════════════
+* Windows 10 / 11 (64-bit)
+* Python 3.8+ (includes tkinter)
+* PowerShell 5.1+
 
-  * Save any .py file ANYWHERE (Desktop, Documents, etc.).
-  * When you run a script, it creates a llama_gui_config.json right
-    next to it – that file stores your last settings.
+### 🔵 CUDA Scripts (MX230 / RTX)
 
-  For the Vulkan script to auto‑detect a manual download:
-     - Extract the Vulkan .zip into %USERPROFILE%\llama-b...-vulkan-x64
-     - OR move it to %USERPROFILE%\llama.cpp\build-vulkan
+* CUDA Toolkit 11.8 or 12.x
+* Visual Studio 2022 Build Tools
+  *(Desktop development with C++)*
+* Git & CMake
 
-═══════════════════════════════════════════════════════════════════════
-🚀 RUNNING THE GUI
-═══════════════════════════════════════════════════════════════════════
+### 🟢 Intel Vulkan Script
 
-  Open a Command Prompt or PowerShell in the script’s folder and type:
+* Latest Intel GPU drivers (with Vulkan support)
+* No SDK required (prebuilt binaries included)
 
-      python "llama.cpp Control center - Intel iris -VULKAN.py"
+---
 
-  (Replace with the script you want.) You can also double‑click the .py
-  file if .py is associated with Python.
+## 📥 Getting llama.cpp Binaries
 
-═══════════════════════════════════════════════════════════════════════
-🧪 PER‑SCRIPT SETUP & TWEAKS
-═══════════════════════════════════════════════════════════════════════
+### 🟢 Intel Vulkan (No Build Required)
 
-🟢 INTEL IRIS / VULKAN SCRIPT
-   * First run: Wait for status “Vulkan build found” (green).
-   * If not found → click “⬇ Download Vulkan Build” (takes ~1 min).
-   * Click “✅ Verify GPU” – you should see your Intel GPU listed.
-   * GPU layers (-ngl): START WITH 20. Do not use 99 unless you have an
-     Arc discrete GPU (Iris Xe shares system memory).
-   * Best models: up to 7B quantized (Q4_K_M). 13B may be slow.
+* Auto-detects prebuilt Vulkan binaries:
 
-🔵 MX230 LOW‑END CUDA SCRIPT
-   * Click “🔧 Install llama.cpp” (needs Git, CMake, CUDA, VS2022).
-   * After build (5‑10 min), click “✅ Verify CUDA”.
-   * GPU layers: 15‑20 (MX230 has only 2‑4 GB VRAM).
-   * Use Q4_K_M or IQ4_XS models up to 7B.
-   * This script also keeps a dropdown of recent models.
+  ```
+  %USERPROFILE%\llama-b8931-bin-win-vulkan-x64\
+  ```
+* Or download via GUI:
 
-🟣 RTX 4060+ CUDA SCRIPT
-   * Same install & verify as above.
-   * Verification uses test-backend-ops.exe – expects “CUDA backend: OK”.
-   * GPU layers: 99 (full offload) works for up to 13B, even 32B with Q4.
-   * For 70B models reduce to 60‑80 layers to avoid OOM.
+  * Click **⬇ Download Vulkan Build**
+  * Extracts to:
 
-═══════════════════════════════════════════════════════════════════════
-🧭 USING THE TABS (Server / CLI / Perplexity / Benchmark)
-═══════════════════════════════════════════════════════════════════════
+  ```
+  %USERPROFILE%\llama.cpp\build-vulkan\
+  ```
 
-All scripts share the same 4 tabs. The Output panel shows live logs.
+---
 
-▶ SERVER TAB
-   - Model: your .gguf file
-   - MMPROJ: optional for multimodal (e.g. LLaVA)
-   - GPU layers: set according to your GPU (see per‑script notes)
-   - Threads: number of CPU cores (e.g. 8)
-   - Context: start with 2048, increase if VRAM allows
-   - Click “▶ Start Server” → open browser to http://127.0.0.1:8080
-   - “🌐 Open Browser” opens the web UI automatically
+### 🔵 CUDA (MX230 / RTX)
 
-▶ CLI CHAT TAB
-   - Choose a model and type a prompt.
-   - Optionally set an MMPROJ file for vision models.
-   - Click “▶ Run CLI” – output streams into the log.
-   - Use “⏹ Stop” to kill long generations.
+#### ▶ Option A – One-Click Install (Recommended)
 
-▶ PERPLEXITY TAB
-   - Provide a model and a .txt file (e.g. wikitext-test.txt).
-   - Runs llama-perplexity.exe – final score (lower = better).
-   - Useful for comparing quantizations.
+1. Install dependencies (Git, CMake, CUDA, VS2022)
+2. Open GUI → click **🔧 Install llama.cpp**
+3. Script will:
 
-▶ BENCHMARK TAB
-   - Leave model blank → runs internal tensor ops benchmark (CPU/GPU).
-   - Or select a model to measure real prompt processing speed.
-   - Add extra flags like “-pp 512 -tg 128 -n 10” in Extra Args.
+   * Clone repo
+   * Build with CUDA
+4. Output:
 
-═══════════════════════════════════════════════════════════════════════
-⚙️ PERSISTENT SETTINGS
-═══════════════════════════════════════════════════════════════════════
+   ```
+   %USERPROFILE%\llama.cpp\build-cuda\bin\Release\
+   ```
 
-Each script creates a llama_gui_config.json next to itself. Example:
+#### ▶ Option B – Manual Download
 
+* Download prebuilt `*-cuda-x64.zip`
+* Extract so `llama-cli.exe` is located at:
+
+  ```
+  %USERPROFILE%\llama.cpp\build-cuda\bin\Release\
+  ```
+
+---
+
+## 📁 Script Location
+
+* Save `.py` files anywhere (Desktop, Documents, etc.)
+* A config file is auto-created:
+
+  ```
+  llama_gui_config.json
+  ```
+
+### Vulkan Auto-Detection Paths:
+
+```
+%USERPROFILE%\llama-b...-vulkan-x64
+%USERPROFILE%\llama.cpp\build-vulkan
+```
+
+---
+
+## 🚀 Running the GUI
+
+```bash
+python "llama.cpp Control center - Intel iris -VULKAN.py"
+```
+
+Or simply **double-click** the `.py` file.
+
+---
+
+## 🧪 GPU-Specific Setup Tips
+
+### 🟢 Intel Iris (Vulkan)
+
+* Click **⬇ Download Vulkan Build** if needed
+* Click **✅ Verify GPU**
+* Recommended:
+
+  * `-ngl 20` (NOT 99)
+* Best models:
+
+  * 7B (Q4_K_M)
+  * 13B = slower
+
+---
+
+### 🔵 MX230 (Low-End CUDA)
+
+* Click **🔧 Install llama.cpp**
+* Then **✅ Verify CUDA**
+* Recommended:
+
+  * `-ngl 15–20`
+* Use:
+
+  * Q4_K_M / IQ4_XS models (≤7B)
+
+---
+
+### 🟣 RTX 4060+
+
+* Full GPU offload supported
+* Recommended:
+
+  * `-ngl 99`
+* Supports:
+
+  * 13B–32B easily
+  * 70B → reduce to `60–80`
+
+---
+
+## 🧭 GUI Tabs Overview
+
+### ▶ Server Tab
+
+* Launch Web UI (`http://127.0.0.1:8080`)
+* Configure:
+
+  * Model (.gguf)
+  * GPU layers
+  * Threads
+  * Context size
+
+---
+
+### ▶ CLI Chat Tab
+
+* Interactive prompt mode
+* Live output streaming
+* Stop anytime with **⏹**
+
+---
+
+### ▶ Perplexity Tab
+
+* Evaluate model quality
+* Lower score = better
+
+---
+
+### ▶ Benchmark Tab
+
+* Measure CPU/GPU performance
+* Example args:
+
+  ```
+  -pp 512 -tg 128 -n 10
+  ```
+
+---
+
+## 💾 Persistent Settings
+
+Example `llama_gui_config.json`:
+
+```json
 {
   "build_bin_dir": "C:\\Users\\You\\llama.cpp\\build-cuda\\bin\\Release",
   "last_model_dir": "D:\\models",
@@ -159,51 +225,42 @@ Each script creates a llama_gui_config.json next to itself. Example:
   "cli_ngl": "20",
   "recent_models": ["D:\\models\\phi-3.Q4_K_M.gguf"]
 }
+```
 
-* The MX230 script stores “recent_models” – the others don’t.
-* Edit this file manually to reset everything or fix a wrong path.
+✔ Auto-saves last used settings
+✔ Editable manually if needed
 
-═══════════════════════════════════════════════════════════════════════
-🐞 TROUBLESHOOTING
-═══════════════════════════════════════════════════════════════════════
+---
 
-Issue                                      Fix
-───────────────────────────────────────────────────────────────────────
-llama-server.exe not found (Vulkan)       Make sure ggml-vulkan.dll is
-                                           in the same folder as 
-                                           llama-server.exe. Use 
-                                           “Refresh detection”.
+## 🐞 Troubleshooting
 
-CUDA build fails (NVCC not found)         Add C:\Program Files\NVIDIA
-                                           GPU Computing Toolkit\CUDA\
-                                           v12.x\bin to PATH. Restart.
+| Issue                     | Fix                                 |
+| ------------------------- | ----------------------------------- |
+| Vulkan build not detected | Ensure `ggml-vulkan.dll` is present |
+| CUDA build fails          | Add CUDA `bin` to PATH              |
+| Out of memory (MX230)     | Lower `-ngl`, reduce context        |
+| Intel slow performance    | Use `-ngl 20`, update drivers       |
+| Install hangs             | Run `.ps1` manually from `%TEMP%`   |
+| Browser can't connect     | Use `--host 0.0.0.0`                |
 
-Out of memory on MX230                    Lower -ngl to 12 or 10.
-                                           Use Q4_K_S or IQ2_XS models.
-                                           Reduce context to 1024.
+---
 
-Intel Vulkan very slow                     Do NOT use -ngl 99. Set 20
-                                           or lower. Update graphics
-                                           driver.
+## 📄 Credits & License
 
-Install script hangs                       First build takes 15+ minutes.
-                                           If it fails, run the generated
-                                           .ps1 from %TEMP% manually.
+* 👨‍💻 **Shashin Somanayake (USDS)** – Creator
+* 🧠 Built on **llama.cpp** by Georgi Gerganov & contributors
+* 📦 Uses only Python standard library
 
-“Threads” setting ignored                  Some builds ignore -t when
-                                           GPU is heavily used – normal.
+---
 
-Browser can’t connect to server            Check log for server errors.
-                                           Use --host 0.0.0.0 in Extra
-                                           Args to allow remote access.
+## ❤️ Support
 
-═══════════════════════════════════════════════════════════════════════
-📄 CREDITS & LICENSE
-═══════════════════════════════════════════════════════════════════════
+If you find this useful:
 
-  * Scripts by Shashin Somanayake (USDS) – free to use, modify, share.
-  * Built on llama.cpp by Georgi Gerganov and contributors.
-  * Uses only Python standard library – no extra pip installs.
+* ⭐ Star the repo
+* 🍴 Fork & improve
+* 🧠 Share your setups
 
-  Happy prompting! 🦙
-═══════════════════════════════════════════════════════════════════════
+---
+
+**Happy Prompting! 🦙**
